@@ -34,6 +34,9 @@ local function init(paq)
 			end
 
 			lspconfig.solargraph.setup(Config:new())
+			lspconfig.mint.setup(Config:new())
+			lspconfig.bicep.setup(Config:new())
+			lspconfig.ansiblels.setup(Config:new())
 			lspconfig.vala_ls.setup(Config:new())
 			lspconfig.jdtls.setup(Config:new())
 			lspconfig.groovyls.setup(Config:new())
