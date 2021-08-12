@@ -89,15 +89,14 @@ value = "9"
 modifier = ["modkey"]
 key = "9"
 
-# hotkey
-# [[keybind]]
-# command = "Execute"
-# value = "xdotool sleep 0.100 key Down"
-# modifier = ["Mod1"]
-# key = "n"
+[[keybind]]
+command = "Execute"
+value = "xdotool key --clearmodifiers Down"
+modifier = ["Mod1"]
+key = "n"
 
-# [[keybind]]
-# command = "Execute"
-# value = "xdotool sleep 0.100 key Up"
-# modifier = ["Mod1"]
-# key = "p"
+[[keybind]]
+command = "Execute"
+value = "xdotool key --clearmodifiers Up"
+modifier = ["Mod1"]
+key = "p"

@@ -3,7 +3,7 @@
 with lib;
 
 {
-  environment.systemPackages = with pkgs; [ lorri ];
+  environment.systemPackages = with pkgs; [ lorri fusuma ];
 
   # lorri
   systemd.user = {
