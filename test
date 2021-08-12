@@ -1,0 +1,16 @@
+● fusuma.service - Start fusuma to handle swipe
+     Loaded: loaded (/nix/store/x23rbmdkf09mn6b262s37bhm7qpgxrc2-unit-fusuma.service/fusuma.service; enabled; vendor preset: enabled)
+     Active: failed (Result: exit-code) since Thu 2021-08-12 19:18:35 BST; 46s ago
+    Process: 2416 ExecStart=/nix/store/zags3n7q3md75wh0qncm4kib1069pgqy-fusuma-1.3.0/bin/fusuma -c /nix/store/vjjcfrmzg82vw9mj1v19sdb91cq4nn5r-config.yaml (code=exited, status=216/GROUP)
+   Main PID: 2416 (code=exited, status=216/GROUP)
+        CPU: 648us
+
+Aug 12 19:18:35 nixos systemd[2416]: fusuma.service: Failed to connect stdout to the journal socket, ignoring: Operation not permitted
+Aug 12 19:18:35 nixos systemd[2416]: fusuma.service: Failed at step GROUP spawning /nix/store/zags3n7q3md75wh0qncm4kib1069pgqy-fusuma-1.3.0/bin/fusuma: Operation not permitted
+Aug 12 19:18:35 nixos systemd[733]: fusuma.service: Main process exited, code=exited, status=216/GROUP
+Aug 12 19:18:35 nixos systemd[733]: fusuma.service: Failed with result 'exit-code'.
+Aug 12 19:18:35 nixos systemd[733]: fusuma.service: Scheduled restart job, restart counter is at 5.
+Aug 12 19:18:35 nixos systemd[733]: Stopped Start fusuma to handle swipe.
+Aug 12 19:18:35 nixos systemd[733]: fusuma.service: Start request repeated too quickly.
+Aug 12 19:18:35 nixos systemd[733]: fusuma.service: Failed with result 'exit-code'.
+Aug 12 19:18:35 nixos systemd[733]: Failed to start Start fusuma to handle swipe.

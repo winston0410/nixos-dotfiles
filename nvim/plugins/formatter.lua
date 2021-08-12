@@ -7,6 +7,14 @@ local function init(paq)
 		opt = true,
 		keys = { { "n", "<a-f>" } },
 		config = function()
+			local function mintfmt()
+                -- https://github.com/google/google-java-format
+				return {
+					exe = "",
+					args = { "--", vim.api.nvim_buf_get_name(0) },
+					stdin = false,
+				}
+			end
 			local function javafmt()
                 -- https://github.com/google/google-java-format
 				return {
@@ -321,6 +329,7 @@ local function init(paq)
 					wren = {},
 					haml = {},
 					nim = { nimfmt },
+					mint = { mintfmt },
 				},
 			})
 

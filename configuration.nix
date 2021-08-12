@@ -59,6 +59,7 @@
     grep = "rg";
     top = "btm";
     ps = "procs";
+    cp = "xcp";
     dotfiles = "$(which git) --git-dir=$HOME/.dotfiles/ --work-tree=$HOME";
   };
 
@@ -136,6 +137,7 @@
     bintools-unwrapped
     bandwhich
     dua
+    xcp
     procs
     bottom
     pciutils

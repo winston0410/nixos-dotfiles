@@ -34,21 +34,17 @@ with lib;
 
       wantedBy = [ "sockets.target" ];
     };
-  };
 
-  systemd.services = {
-    # fusuma = {
-      # description = "Start fusuma to handle swipe";
-      # wantedBy = [ "graphical.target" ];
-      # after = [ "graphical-session.target" ];
-      # restartIfChanged = true;
+    services.fusuma = {
+      description = "Start fusuma to handle swipe";
+      wantedBy = [ "default.target" ];
+      after = [ "graphical-session.target" ];
+      restartIfChanged = false;
 
-      # serviceConfig = {
-        # Group = "input";
-        # Restart = "always";
-        # ExecStart = "${pkgs.fusuma}/bin/fusuma -c ${./fusuma/config.yaml}";
-      # };
-    # };
+      serviceConfig = {
+        Restart = "on-failure";
+        ExecStart = "${pkgs.fusuma}/bin/fusuma -c ${./fusuma/config.yaml}";
+      };
+    };
   };
-  # bar(what bar to use)?
 }

@@ -85,8 +85,8 @@ in {
       sessionCommands = ''
         ${initialLight}
         ${pkgs.xorg.xmodmap}/bin/xmodmap ${keybindings}
-        ${pkgs.fusuma}/bin/fusuma -d -c ${./fusuma/config.yaml}
       '';
+        # ${pkgs.fusuma}/bin/fusuma -d -c ${./fusuma/config.yaml}
     };
   };
 }
