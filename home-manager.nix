@@ -3,8 +3,14 @@
 {
   home.file = {
     #neovim
-    ".config/nvim" = {
-      source = ./nvim;
+    ".config/nvim/init.lua" = {
+      source = ./nvim/init.lua;
+    };
+    ".config/nvim/plugins" = {
+      source = ./nvim/plugins;
+    };
+    ".config/nvim/ftplugin" = {
+      source = ./nvim/ftplugin;
     };
     #leftwm
     ".config/leftwm/" = {
