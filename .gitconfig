@@ -1,0 +1,14 @@
+[user]
+	name = kghugo
+	email = hugosum.dev@protonmail.com
+[core]
+	editor = nvim
+[difftool "vimdiff"]
+	path = nvim -d
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+	ff = no
+[pull]
+	ff = yes
