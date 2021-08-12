@@ -40,6 +40,9 @@ with lib;
       wantedBy = [ "default.target" ];
       after = [ "graphical-session.target" ];
       restartIfChanged = false;
+      # environment = {
+        # DISPLAY = ":0.0";
+      # };
 
       serviceConfig = {
         Restart = "on-failure";

@@ -59,7 +59,7 @@
     grep = "rg";
     top = "btm";
     ps = "procs";
-    cp = "xcp";
+    cp = "xcp -r ";
     dotfiles = "$(which git) --git-dir=$HOME/.dotfiles/ --work-tree=$HOME";
   };
 
