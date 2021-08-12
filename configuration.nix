@@ -151,6 +151,7 @@
     fzf
     fd
     ripgrep
+    rm-improved
     wezterm
     # shell
     zsh
