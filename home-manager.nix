@@ -17,6 +17,7 @@
     "nvim/init.lua" = { source = ./nvim/init.lua; };
     "nvim/plugins" = { source = ./nvim/plugins; };
     "nvim/ftplugin" = { source = ./nvim/ftplugin; };
+    "nvim/ftdetect" = { source = ./nvim/ftdetect; };
     #leftwm
     "leftwm/" = { source = ./leftwm; };
     #fusuma
