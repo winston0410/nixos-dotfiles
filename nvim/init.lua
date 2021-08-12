@@ -129,8 +129,6 @@ for _, option in ipairs(buffer_options) do
 	vim.bo[option[1]] = option[2]
 end
 
-require("custom-filetypes")
-
 require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	require("plugins.trouble").init(use)
