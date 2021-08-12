@@ -124,7 +124,7 @@
     users.hugosum = {
       isNormalUser = true;
       home = "/home/hugosum";
-      extraGroups = [ "wheel" "networkmanager" "docker" ];
+      extraGroups = [ "wheel" "networkmanager" "docker" "input" ];
       hashedPassword =
         "$6$pHSJA2UTMz$Z5IS7T6E67bshhmPfcAQRRKgbEuOelR23SiB5Os0YqUqX.oDl5P/nhnKbSAYmiU1mHn01tJ90HD11dYQpg1iN0";
     };

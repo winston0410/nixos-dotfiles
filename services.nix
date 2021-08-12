@@ -36,20 +36,19 @@ with lib;
     };
   };
 
-  # systemd.services = {
-    # fusuma = {
-      # description = "Start fusuma to handle swipe";
-      # wantedBy = [ "graphical.target" ];
-      # after = [ "graphical-session.target" ];
-      # restartIfChanged = true;
+  systemd.services = {
+    fusuma = {
+      description = "Start fusuma to handle swipe";
+      wantedBy = [ "graphical.target" ];
+      after = [ "graphical-session.target" ];
+      restartIfChanged = true;
 
-      # serviceConfig = {
-        # User = "root";
-        # Group = "root";
-        # Restart = "always";
-        # ExecStart = "${pkgs.fusuma}/bin/fusuma -c ${./fusuma/config.yaml}";
-      # };
-    # };
-  # };
+      serviceConfig = {
+        Group = "input";
+        Restart = "always";
+        ExecStart = "${pkgs.fusuma}/bin/fusuma -c ${./fusuma/config.yaml}";
+      };
+    };
+  };
   # bar(what bar to use)?
 }
