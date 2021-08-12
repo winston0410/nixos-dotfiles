@@ -19,6 +19,10 @@
     "nvim/ftplugin" = { source = ./nvim/ftplugin; };
     #leftwm
     "leftwm/" = { source = ./leftwm; };
+    #fusuma
+    "fusuma/" = { source = ./fusuma; };
+    #wezterm
+    "wezterm/" = { source = ./wezterm; };
   };
 
   systemd = { user.startServices = "sd-switch"; };
