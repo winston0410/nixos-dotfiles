@@ -45,11 +45,10 @@ with lib;
       restartIfChanged = true;
 
       serviceConfig = {
-        # Type = "forking";
         User = "root";
         Group = "root";
         Restart = "always";
-        ExecStart = "${pkgs.fusuma}/bin/fusuma";
+        ExecStart = "${pkgs.fusuma}/bin/fusuma -c ${./fusuma/config.yaml}";
       };
     };
   };
