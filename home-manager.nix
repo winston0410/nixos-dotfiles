@@ -2,32 +2,23 @@
 
 {
   home.file = {
-    #neovim
-    ".config/nvim/init.lua" = {
-      source = ./nvim/init.lua;
-    };
-    ".config/nvim/plugins" = {
-      source = ./nvim/plugins;
-    };
-    ".config/nvim/ftplugin" = {
-      source = ./nvim/ftplugin;
-    };
-    #leftwm
-    ".config/leftwm/" = {
-      source = ./leftwm;
-    };
     #tmux
-    ".tmux.conf" = {
-      source = ./.tmux.conf;
-    };
+    ".tmux.conf" = { source = ./.tmux.conf; };
     #git
-    ".gitconfig" = {
-      source = ./.gitconfig;
-    };
+    ".gitconfig" = { source = ./.gitconfig; };
     #cursor theme
     ".icons/default" = {
       source = "${pkgs.bibata-cursors}/share/icons/Bibata_Ice";
     };
+  };
+
+  xdg.configFile = {
+    #neovim
+    "nvim/init.lua" = { source = ./nvim/init.lua; };
+    "nvim/plugins" = { source = ./nvim/plugins; };
+    "nvim/ftplugin" = { source = ./nvim/ftplugin; };
+    #leftwm
+    "leftwm/" = { source = ./leftwm; };
   };
 
   systemd = { user.startServices = "sd-switch"; };
