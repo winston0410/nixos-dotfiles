@@ -39,10 +39,12 @@ with lib;
       description = "Start fusuma to handle swipe";
       wantedBy = [ "graphical.target" ];
       after = [ "graphical-session.target" ];
-
       restartIfChanged = true;
 
       serviceConfig = {
+        Type = "forking";
+        User = "root";
+        Group = "root";
         Restart = "always";
         ExecStart = "${pkgs.fusuma}/bin/fusuma";
       };
