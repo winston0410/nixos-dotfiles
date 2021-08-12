@@ -34,15 +34,18 @@ with lib;
 
       wantedBy = [ "sockets.target" ];
     };
+  };
+
+  systemd.services = {
     # fusuma
-    services.fusuma = {
+    fusuma = {
       description = "Start fusuma to handle swipe";
       wantedBy = [ "graphical.target" ];
       after = [ "graphical-session.target" ];
       restartIfChanged = true;
 
       serviceConfig = {
-        Type = "forking";
+        # Type = "forking";
         User = "root";
         Group = "root";
         Restart = "always";
@@ -50,6 +53,5 @@ with lib;
       };
     };
   };
-
   # bar(what bar to use)?
 }
