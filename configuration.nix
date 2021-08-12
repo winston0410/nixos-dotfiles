@@ -53,6 +53,7 @@
     sudoedit = "sudo -E -s $EDITOR";
     sudoe = "sudo -E -s $EDITOR";
     ls = "lsd -a ";
+    rm = "rip";
     vim = "nvim";
     vi = "nvim";
     grep = "rg";

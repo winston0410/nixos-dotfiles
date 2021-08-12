@@ -34,8 +34,20 @@ with lib;
 
       wantedBy = [ "sockets.target" ];
     };
+    # fusuma
+    services.fusuma = {
+      description = "Start fusuma to handle swipe";
+      wantedBy = [ "graphical.target" ];
+      after = [ "graphical-session.target" ];
+
+      restartIfChanged = true;
+
+      serviceConfig = {
+        Restart = "always";
+        ExecStart = "${pkgs.fusuma}/bin/fusuma";
+      };
+    };
   };
-  # fusuma
 
   # bar(what bar to use)?
 }
