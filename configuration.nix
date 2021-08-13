@@ -74,7 +74,7 @@
 
   environment.shells = with pkgs; [ fish zsh ];
 
-  fonts = { fonts = with pkgs; [ nerdfonts ]; };
+  fonts = { fonts = with pkgs; [ nerdfonts noto-fonts-cjk]; };
 
   hardware.trackpoint = {
     enable = true;
