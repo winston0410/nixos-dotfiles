@@ -36,6 +36,7 @@ in {
     feh
     insomnia
     brave
+    tdesktop
     cursor
     # (callPackage ./eww.nix {})
   ];

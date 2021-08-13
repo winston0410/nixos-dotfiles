@@ -8,6 +8,8 @@
 
   environment.etc = {
     "systemd/journald.conf" = { source = ./journald.conf; };
+    # for macbook pro 2017
+    # "udev/rules.d/keyboard.rules" = { source = ./keyboard.rules; };
   };
 
   powerManagement = {

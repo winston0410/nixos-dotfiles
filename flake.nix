@@ -36,7 +36,7 @@
               home-manager.useUserPackages = true;
               home-manager.users.hugosum = import ./home-manager.nix;
             }
-            ./docker.nix
+            ./container.nix
             ./hardware-configuration.nix
             ./services.nix
             ./shell.nix
