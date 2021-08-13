@@ -1,12 +1,15 @@
 { config, pkgs, ... }:
 
 {
-  environment.etc = {
-    "systemd/journald.conf" = {
-      source = ./journald.conf;
-    };
+  i18n.inputMethod = {
+    enabled = "ibus";
+    ibus.engines = with pkgs.ibus-engines; [ rime ];
   };
-  
+
+  environment.etc = {
+    "systemd/journald.conf" = { source = ./journald.conf; };
+  };
+
   powerManagement = {
     enable = true;
     powertop.enable = true;
