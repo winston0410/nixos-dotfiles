@@ -1,6 +1,12 @@
 { config, pkgs, ... }:
 
 {
+  environment.etc = {
+    "systemd/journald.conf" = {
+      source = ./journald.conf;
+    };
+  };
+  
   powerManagement = {
     enable = true;
     powertop.enable = true;

@@ -1,1 +1,1 @@
-echo "LoadTheme $SCRIPTPATH/theme.toml" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
+leftwm-command "LoadTheme $HOME/.config/leftwm/themes/current/theme.toml"

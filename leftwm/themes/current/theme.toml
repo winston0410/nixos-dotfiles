@@ -1,2 +1,3 @@
-border_width = 10
-margin = 5
+border_width = 0
+margin = 0
+workspace_margin = 0

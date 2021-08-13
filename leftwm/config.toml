@@ -89,14 +89,26 @@ value = "9"
 modifier = ["modkey"]
 key = "9"
 
-[[keybind]]
-command = "Execute"
-value = "xdotool key --clearmodifiers Down"
-modifier = ["Mod1"]
-key = "n"
+# [[keybind]]
+# command = "Execute"
+# value = "sudo light -U 2"
+# modifier = []
+# key = "XF86MonBrightnessDown"
 
-[[keybind]]
-command = "Execute"
-value = "xdotool key --clearmodifiers Up"
-modifier = ["Mod1"]
-key = "p"
+# [[keybind]]
+# command = "Execute"
+# value = "sudo light -A 2"
+# modifier = []
+# key = "XF86MonBrightnessUp"
+
+# [[keybind]]
+# command = "Execute"
+# value = "xdotool key --clearmodifiers Down"
+# modifier = ["Mod1"]
+# key = "n"
+
+# [[keybind]]
+# command = "Execute"
+# value = "xdotool key --clearmodifiers Up"
+# modifier = ["Mod1"]
+# key = "p"
