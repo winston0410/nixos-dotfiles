@@ -156,6 +156,7 @@
     neovim
     nodejs-16_x
     git
+    gh
     bat
     fzf
     fd
@@ -259,6 +260,8 @@
   ];
 
   services.openssh = { enable = true; };
+
+  services.postgresql = { enable = true; };
 
   programs.ssh = { askPassword = ""; };
 
