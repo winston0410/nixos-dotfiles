@@ -26,6 +26,8 @@ local function init(paq)
 
 			capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { focusable = false })
+
 			local Config = { root_dir = root_dir, capabilities = capabilities, on_attach = on_attach }
 			Config.__index = Config
 
@@ -33,22 +35,47 @@ local function init(paq)
 				return setmetatable((opts or {}), Config)
 			end
 
-			lspconfig.solargraph.setup(Config:new())
-			lspconfig.mint.setup(Config:new())
-			lspconfig.bicep.setup(Config:new())
-			lspconfig.ansiblels.setup(Config:new())
-			lspconfig.vala_ls.setup(Config:new())
-			lspconfig.jdtls.setup(Config:new())
-			lspconfig.groovyls.setup(Config:new())
-			lspconfig.html.setup(Config:new())
-			lspconfig.cssls.setup(Config:new())
-			lspconfig.jsonls.setup(Config:new())
+			local servers = {
+				"solargraph",
+				"mint",
+				"bicep",
+				"ansiblels",
+				"vala_ls",
+				"jdtls",
+				"groovyls",
+				"html",
+				"cssls",
+				"jsonls",
+				"leanls",
+				"dhall_lsp_server",
+				"hls",
+				"dartls",
+				"terraformls",
+				"texlab",
+				"ccls",
+				"svelte",
+				"vuels",
+				"sqls",
+				"graphql",
+				"elmls",
+				"ocamlls",
+				"puppet",
+				"serve_d",
+				"gdscript",
+				"scry",
+				"ember",
+				"angularls",
+				"bashls",
+				"prismals",
+			}
+
+			for _, server in ipairs(servers) do
+				lspconfig[server].setup(Config:new())
+			end
+
 			lspconfig.elixirls.setup(Config:new({
 				cmd = { "elixir-ls" },
 			}))
-			lspconfig.leanls.setup(Config:new())
-			lspconfig.dhall_lsp_server.setup(Config:new())
-			lspconfig.hls.setup(Config:new())
 			lspconfig.rust_analyzer.setup(Config:new({
 				checkOnSave = {
 					allFeatures = true,
@@ -62,24 +89,6 @@ local function init(paq)
 					-- },
 				},
 			}))
-			lspconfig.dartls.setup(Config:new())
-			lspconfig.terraformls.setup(Config:new())
-			lspconfig.texlab.setup(Config:new())
-			lspconfig.ccls.setup(Config:new())
-			lspconfig.svelte.setup(Config:new())
-			lspconfig.vuels.setup(Config:new())
-			lspconfig.sqls.setup(Config:new())
-			lspconfig.graphql.setup(Config:new())
-			lspconfig.elmls.setup(Config:new())
-			lspconfig.ocamlls.setup(Config:new())
-			lspconfig.puppet.setup(Config:new())
-			lspconfig.serve_d.setup(Config:new())
-			lspconfig.gdscript.setup(Config:new())
-			lspconfig.scry.setup(Config:new())
-			lspconfig.ember.setup(Config:new())
-			lspconfig.angularls.setup(Config:new())
-			lspconfig.bashls.setup(Config:new())
-			lspconfig.prismals.setup(Config:new())
 			-- lspconfig.zeta_note.setup({ on_attach = on_attach, root_dir = root_dir })
 			lspconfig.r_language_server.setup(Config:new())
 			lspconfig.kotlin_language_server.setup(Config:new())
@@ -144,8 +153,6 @@ local function init(paq)
 					gopls = { analyses = { unusedparams = true }, staticcheck = true },
 				},
 			}))
-
-			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { focusable = false })
 
 			-- vim.lsp.handlers["textdocument/publishdiagnostics"] =
 			-- vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
