@@ -98,7 +98,7 @@
   programs.light = { enable = true; };
 
   services.actkbd = {
-    enable = true;
+    enable = false;
     # Bind key for controlling screen brightness
     bindings = [
       {
@@ -136,7 +136,7 @@
     users.hugosum = {
       isNormalUser = true;
       home = "/home/hugosum";
-      extraGroups = [ "wheel" "networkmanager" "docker" "input" ];
+      extraGroups = [ "wheel" "networkmanager" "docker" "input" "video" ];
       hashedPassword =
         "$6$pHSJA2UTMz$Z5IS7T6E67bshhmPfcAQRRKgbEuOelR23SiB5Os0YqUqX.oDl5P/nhnKbSAYmiU1mHn01tJ90HD11dYQpg1iN0";
     };

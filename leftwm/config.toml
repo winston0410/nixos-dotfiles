@@ -89,17 +89,17 @@ value = "9"
 modifier = ["modkey"]
 key = "9"
 
-# [[keybind]]
-# command = "Execute"
-# value = "sudo light -U 2"
-# modifier = []
-# key = "XF86MonBrightnessDown"
+[[keybind]]
+command = "Execute"
+value = "light -U 2"
+modifier = []
+key = "XF86MonBrightnessDown"
 
-# [[keybind]]
-# command = "Execute"
-# value = "sudo light -A 2"
-# modifier = []
-# key = "XF86MonBrightnessUp"
+[[keybind]]
+command = "Execute"
+value = "light -A 2"
+modifier = []
+key = "XF86MonBrightnessUp"
 
 # [[keybind]]
 # command = "Execute"
