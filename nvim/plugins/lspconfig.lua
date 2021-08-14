@@ -67,10 +67,22 @@ local function init(paq)
 				"angularls",
 				"bashls",
 				"prismals",
+				"tsserver",
+				-- "denols"
+				"dockerls",
+				"nimls",
+				"metals",
+				"julials",
+				"purescriptls",
+				"yamlls",
+				"vimls",
+				"rnix",
+                "r_language_server",
+                "kotlin_language_server"
 			}
 
 			for _, server in ipairs(servers) do
-				lspconfig[server].setup(Config:new())
+				lspconfig[server].setup(Config:new({ on_attach = on_attach}))
 			end
 
 			lspconfig.elixirls.setup(Config:new({
@@ -90,8 +102,6 @@ local function init(paq)
 				},
 			}))
 			-- lspconfig.zeta_note.setup({ on_attach = on_attach, root_dir = root_dir })
-			lspconfig.r_language_server.setup(Config:new())
-			lspconfig.kotlin_language_server.setup(Config:new())
 			lspconfig.cmake.setup(Config:new({
 				cmd = { "cmake-language-server" },
 				filetypes = { "cmake" },
@@ -123,16 +133,7 @@ local function init(paq)
 					},
 				},
 			}))
-			lspconfig.tsserver.setup(Config:new())
-			-- lspconfig.denols.setup(standard_config)
-			lspconfig.dockerls.setup(Config:new())
-			lspconfig.nimls.setup(Config:new())
-			lspconfig.metals.setup(Config:new())
-			lspconfig.julials.setup(Config:new())
-			lspconfig.purescriptls.setup(Config:new())
-			lspconfig.yamlls.setup(Config:new())
-			lspconfig.vimls.setup(Config:new())
-			lspconfig.rnix.setup(Config:new())
+
 			lspconfig.pyright.setup(Config:new({
 				cmd = { "pyright-langserver", "--stdio" },
 			}))
