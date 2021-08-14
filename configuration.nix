@@ -1,9 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  boot.kernelPackages = with pkgs; linuxPackages_latest;
 
-  hardware.enableAllFirmware = true;
-  
   i18n.inputMethod = {
     enabled = "ibus";
     ibus.engines = with pkgs.ibus-engines; [ rime ];
