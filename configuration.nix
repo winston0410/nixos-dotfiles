@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+
+  hardware.enableAllFirmware = true;
+  
   i18n.inputMethod = {
     enabled = "ibus";
     ibus.engines = with pkgs.ibus-engines; [ rime ];
@@ -76,7 +79,7 @@
 
   environment.shells = with pkgs; [ fish zsh ];
 
-  fonts = { fonts = with pkgs; [ nerdfonts noto-fonts-cjk]; };
+  fonts = { fonts = with pkgs; [ nerdfonts noto-fonts-cjk ]; };
 
   hardware.trackpoint = {
     enable = true;
@@ -101,10 +104,10 @@
 
   sound.enable = true;
 
-  hardware.pulseaudio = {
-    enable = true;
-    tcp.enable = true;
-  };
+  # hardware.pulseaudio = {
+  # enable = true;
+  # support32Bit = true;
+  # };
 
   users = {
     # Setting this to true temporaily to prevent being locked out from the system
@@ -113,7 +116,8 @@
     users.hugosum = {
       isNormalUser = true;
       home = "/home/hugosum";
-      extraGroups = [ "wheel" "networkmanager" "docker" "input" "video" "audio" "sound" ];
+      extraGroups =
+        [ "wheel" "networkmanager" "docker" "input" "video" "audio" "sound" ];
       hashedPassword =
         "$6$pHSJA2UTMz$Z5IS7T6E67bshhmPfcAQRRKgbEuOelR23SiB5Os0YqUqX.oDl5P/nhnKbSAYmiU1mHn01tJ90HD11dYQpg1iN0";
     };
