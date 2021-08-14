@@ -21,12 +21,9 @@ local mappings = {
 	{ "S", "<NOP>" },
 	{ "s", "<NOP>" },
 	{ "<A-v>", "<c-v>" },
-	{ "<A-r>", "<c-r>" },
 }
 
--- map alt-v to ctrl-v for entering visual block mode
--- vim.api.nvim_set_keymap("n", "<A-v>", "<C-v>", { silent = true, noremap = true})
--- vim.api.nvim_set_keymap("n", "<A-r>", "<C-r>", { silent = true, noremap = true})
+vim.api.nvim_set_keymap("i", "<A-r>", "<C-r>", { silent = true, noremap = true})
 
 vim.api.nvim_set_keymap("n", "gs", ":%s/", { silent = true, noremap = true })
 vim.api.nvim_set_keymap("v", "gs", ":s/", { silent = true, noremap = true })

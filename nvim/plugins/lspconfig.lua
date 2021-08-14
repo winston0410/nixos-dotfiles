@@ -82,6 +82,7 @@ local function init(paq)
 			}
 
 			for _, server in ipairs(servers) do
+                -- TOFIX: passing on_attach function here again, as somehow the on_attach function passed in metatable doesn't work
 				lspconfig[server].setup(Config:new({ on_attach = on_attach}))
 			end
 
