@@ -20,7 +20,13 @@ local mappings = {
 	{ "Y", "y$" },
 	{ "S", "<NOP>" },
 	{ "s", "<NOP>" },
+	{ "<A-v>", "<C-v>" },
+	{ "<A-r>", "<C-r>" },
 }
+
+-- map alt-v to ctrl-v for entering visual block mode
+-- vim.api.nvim_set_keymap("n", "<A-v>", "<C-v>", { silent = true, noremap = true})
+-- vim.api.nvim_set_keymap("n", "<A-r>", "<C-r>", { silent = true, noremap = true})
 
 vim.api.nvim_set_keymap("n", "gs", ":%s/", { silent = true, noremap = true })
 vim.api.nvim_set_keymap("v", "gs", ":s/", { silent = true, noremap = true })
@@ -44,9 +50,6 @@ for _, mode in pairs(all_modes) do
 	vim.api.nvim_set_keymap(mode, "<A-n>", "<Down>", { silent = true, noremap = true })
 end
 
--- map alt-v to ctrl-v for entering visual block mode
-vim.api.nvim_set_keymap("n", "<A-v>", "<C-v>", { silent = true, noremap = true})
-vim.api.nvim_set_keymap("n", "<A-r>", "<C-r>", { silent = true, noremap = true})
 
 --vim.cmd([[ source $HOME/.config/nvim/values.vim ]])
 vim.cmd("syntax enable")
