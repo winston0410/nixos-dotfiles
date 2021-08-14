@@ -93,13 +93,13 @@ key = "9"
 command = "Execute"
 value = "light -U 2"
 modifier = []
-key = "XF86MonBrightnessDown"
+key = "XF86XK_MonBrightnessDown"
 
 [[keybind]]
 command = "Execute"
 value = "light -A 2"
 modifier = []
-key = "XF86MonBrightnessUp"
+key = "XF86XK_MonBrightnessUp"
 
 # [[keybind]]
 # command = "Execute"

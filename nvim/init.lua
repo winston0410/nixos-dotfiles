@@ -20,8 +20,8 @@ local mappings = {
 	{ "Y", "y$" },
 	{ "S", "<NOP>" },
 	{ "s", "<NOP>" },
-	{ "<A-v>", "<C-v>" },
-	{ "<A-r>", "<C-r>" },
+	{ "<A-v>", "<c-v>" },
+	{ "<A-r>", "<c-r>" },
 }
 
 -- map alt-v to ctrl-v for entering visual block mode

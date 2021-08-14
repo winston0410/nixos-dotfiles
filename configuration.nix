@@ -97,29 +97,6 @@
 
   programs.light = { enable = true; };
 
-  services.actkbd = {
-    enable = false;
-    # Bind key for controlling screen brightness
-    bindings = [
-      {
-        keys = [ 224 ];
-        events = [ "key" "rep" ];
-        command = "/run/current-system/sw/bin/light -U 2";
-      }
-      {
-        keys = [ 225 ];
-        events = [ "key" "rep" ];
-        command = "/run/current-system/sw/bin/light -A 2";
-      }
-      # Mute button
-      # { keys = [ 113 ]; events = [ "key" "rep" ]; command = ""; }
-      # Volume down
-      # { keys = [ 114 ]; events = [ "key" "rep" ]; command = ""; }
-      # Volume up
-      # { keys = [ 115 ]; events = [ "key" "rep" ]; command = ""; }
-    ];
-  };
-
   services.printing = { enable = true; };
 
   sound.enable = true;
