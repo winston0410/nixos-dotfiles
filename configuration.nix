@@ -65,6 +65,7 @@
     sudo = "sudo ";
     sudoedit = "sudo -E -s $EDITOR";
     sudoe = "sudo -E -s $EDITOR";
+    tree = "tre";
     ls = "lsd -a ";
     rm = "rip";
     vim = "nvim";
@@ -148,6 +149,7 @@
     ripgrep
     rm-improved
     wezterm
+    tre-command
     # shell
     zsh
     # Linters, formatter and LSP
