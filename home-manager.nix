@@ -5,7 +5,7 @@ with config.lib;
 {
   home.file = {
     #tmux
-    ".tmux.conf" = { source = file.mkOutOfStoreSymlink ./.tmux.conf; };
+    ".tmux.conf" = { source = file.mkOutOfStoreSymlink "${config.home.homeDirectory}/flake/.tmux.conf"; };
     #git
     ".gitconfig" = { source = file.mkOutOfStoreSymlink ./.gitconfig; };
     #cursor theme
