@@ -1,11 +1,13 @@
 { config, lib, pkgs, ... }:
 
+with config.lib;
+
 {
   home.file = {
     #tmux
-    ".tmux.conf" = { source = ./.tmux.conf; };
+    ".tmux.conf" = { source = file.mkOutOfStoreSymlink ./.tmux.conf; };
     #git
-    ".gitconfig" = { source = ./.gitconfig; };
+    ".gitconfig" = { source = file.mkOutOfStoreSymlink ./.gitconfig; };
     #cursor theme
     ".icons/default" = {
       source = "${pkgs.bibata-cursors}/share/icons/Bibata_Ice";
@@ -14,10 +16,10 @@
 
   xdg.configFile = {
     #neovim
-    "nvim/init.lua" = { source = ./nvim/init.lua; };
-    "nvim/plugins" = { source = ./nvim/plugins; };
-    "nvim/ftplugin" = { source = ./nvim/ftplugin; };
-    "nvim/ftdetect" = { source = ./nvim/ftdetect; };
+    "nvim/init.lua" = { source = file.mkOutOfStoreSymlink ./nvim/init.lua; };
+    "nvim/plugins" = { source = file.mkOutOfStoreSymlink ./nvim/plugins; };
+    "nvim/ftplugin" = { source = file.mkOutOfStoreSymlink ./nvim/ftplugin; };
+    "nvim/ftdetect" = { source = file.mkOutOfStoreSymlink ./nvim/ftdetect; };
     #leftwm
     "leftwm/" = { source = ./leftwm; };
     #fusuma
