@@ -20,7 +20,8 @@ local mappings = {
 	{ "Y", "y$" },
 	{ "S", "<NOP>" },
 	{ "s", "<NOP>" },
-	{ "<A-v>", "<c-v>" },
+	{ "<A-v>", "<C-v>" },
+	{ "<A-r>", "<C-r>" },
 }
 
 vim.api.nvim_set_keymap("i", "<A-r>", "<C-r>", { silent = true, noremap = true})

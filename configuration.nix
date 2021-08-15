@@ -187,7 +187,7 @@
     # nodePackages.vscode-langservers-extracted
     # nodePackages.elm-format
     # nodePackages.graphql-language-service-cli
-    # #     nodePackages.prettier
+    nodePackages.prettier
     # nodePackages."@angular/language-server"
     # nodePackages."@prisma/language-server"
     # nodePackages.npm-package-json-lint
