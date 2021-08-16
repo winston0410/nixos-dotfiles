@@ -16,10 +16,10 @@ with config.lib;
 
   xdg.configFile = {
     #neovim
-    "nvim/init.lua" = { source = file.mkOutOfStoreSymlink ./nvim/init.lua; };
-    "nvim/plugins" = { source = file.mkOutOfStoreSymlink ./nvim/plugins; };
-    "nvim/ftplugin" = { source = file.mkOutOfStoreSymlink ./nvim/ftplugin; };
-    "nvim/ftdetect" = { source = file.mkOutOfStoreSymlink ./nvim/ftdetect; };
+    "nvim/init.lua" = { source = ./nvim/init.lua; };
+    "nvim/plugins" = { source = ./nvim/plugins; };
+    "nvim/ftplugin" = { source =  ./nvim/ftplugin; };
+    "nvim/ftdetect" = { source = ./nvim/ftdetect; };
     #leftwm
     "leftwm/" = { source = ./leftwm; };
     #fusuma
