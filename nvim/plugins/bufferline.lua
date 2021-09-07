@@ -21,9 +21,9 @@ local function init(use)
 					enforce_regular_tabs = false,
 					show_buffer_close_icons = false,
 					show_close_icon = false,
-					left_mouse_command = "buffer! %d",
-					middle_mouse_command = "buffer! %d",
-					right_mouse_command = "buffer! %d",
+					left_mouse_command = "BufDel",
+					middle_mouse_command = "BufDel",
+					right_mouse_command = "BufDel",
 					separator_style = "thin",
 					always_show_bufferline = true,
 					tab_size = 15,
@@ -46,7 +46,7 @@ local function init(use)
 		},
 		config = function()
 			require("buf-num-nav").setup({
-                leader = "<a-g>",
+                leader = ",",
 				commands = {
                     -- TODO: cannot update nvimtree current file with <bar>NvimTreeRefresh
 					bufdelete = "BufDel",
