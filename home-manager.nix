@@ -4,6 +4,8 @@ with config.lib;
 
 {
   home.file = {
+    # color for fzf
+    "fzf-color.sh" = { source = ./fzf-color.sh; };
     #tmux
     ".tmux.conf" = { source = file.mkOutOfStoreSymlink "${config.home.homeDirectory}/flake/.tmux.conf"; };
     #git

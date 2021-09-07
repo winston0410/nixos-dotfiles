@@ -21,7 +21,6 @@ local function init(use)
 					enforce_regular_tabs = false,
 					show_buffer_close_icons = false,
 					show_close_icon = false,
-					mappings = false,
 					left_mouse_command = "buffer! %d",
 					middle_mouse_command = "buffer! %d",
 					right_mouse_command = "buffer! %d",

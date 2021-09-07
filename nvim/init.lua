@@ -142,7 +142,7 @@ require("packer").startup(function(use)
 	require("plugins.hop").init(use)
 	require("plugins.gitsigns").init(use)
 	require("plugins.indent-blankline").init(use)
-	-- require("plugins.telescope").init(use)
+	require("plugins.fzf-lua").init(use)
 	require("plugins.galaxyline").init(use)
 	require("plugins.formatter").init(use)
 	--require("plugins.colorizer").init(use)
@@ -155,7 +155,7 @@ require("packer").startup(function(use)
 	require("plugins.commented").init(use)
 	require("plugins.bufferline").init(use)
 	require("plugins.hardmode").init(use)
-	require("plugins.nvim-tree").init(use)
+	--  require("plugins.nvim-tree").init(use)
 	require("plugins.smart-number").init(use)
 	-- require("plugins.suitcase").init(use)
 	-- require("plugins.which-key").init(use)
@@ -171,40 +171,3 @@ vim.api.nvim_exec(
 	]],
 	true
 )
-
--- vim.api.nvim_exec(
-	-- [[
--- augroup EnvFiletype
--- autocmd!
--- autocmd BufNewFile,BufRead *.env set filetype=dotenv.sh
--- autocmd BufNewFile,BufRead *.tmux set filetype=tmux.sh
--- autocmd BufNewFile,BufRead *.lock set filetype=sh
--- autocmd BufNewFile,BufRead *.config set filetype=config
--- autocmd BufNewFile,BufRead .tmux.conf set filetype=tmux.sh
--- autocmd BufNewFile,BufRead package.json set filetype=packageJson.json
--- augroup END
--- ]],
-	-- true
--- )
-
--- vim.cmd([[
--- " Change search highlight
--- highlight! link Search Visual
--- " Change incsearch highlight
--- highlight! link IncSearch Visual
--- ]])
-
--- "Override theme highlight
--- highlight! link VirtualTextHint Blue
--- highlight! link HintText Blue
--- "gitsigns
--- highlight! link GitSignsAdd Green
--- highlight! link GitSignsChange Yellow
--- highlight! link GitSignsDelete Red
--- "LspInfomation
--- highlight! link LspDiagnosticsSignHint BlueSign
--- " Gitsigns
--- highlight! link GitSignsCurrentLineBlame TSComment
--- " relativenumber current line highlight
--- " Use cleared to make it white
--- highlight! link CursorLineNr cleared
