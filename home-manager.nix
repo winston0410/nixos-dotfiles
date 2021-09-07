@@ -7,7 +7,10 @@ with config.lib;
     # color for fzf
     "fzf-color.sh" = { source = ./fzf-color.sh; };
     #tmux
-    ".tmux.conf" = { source = file.mkOutOfStoreSymlink "${config.home.homeDirectory}/flake/.tmux.conf"; };
+    ".tmux.conf" = {
+      source = file.mkOutOfStoreSymlink
+        "${config.home.homeDirectory}/flake/.tmux.conf";
+    };
     #git
     ".gitconfig" = { source = file.mkOutOfStoreSymlink ./.gitconfig; };
     #cursor theme
@@ -20,7 +23,7 @@ with config.lib;
     #neovim
     "nvim/init.lua" = { source = ./nvim/init.lua; };
     "nvim/plugins" = { source = ./nvim/plugins; };
-    "nvim/ftplugin" = { source =  ./nvim/ftplugin; };
+    "nvim/ftplugin" = { source = ./nvim/ftplugin; };
     "nvim/ftdetect" = { source = ./nvim/ftdetect; };
     #leftwm
     "leftwm/" = { source = ./leftwm; };
@@ -28,6 +31,12 @@ with config.lib;
     "fusuma/" = { source = ./fusuma; };
     #wezterm
     "wezterm/" = { source = ./wezterm; };
+  };
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+    BROWSER = "brave";
   };
 
   systemd = { user.startServices = "sd-switch"; };

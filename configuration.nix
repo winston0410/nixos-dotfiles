@@ -54,9 +54,6 @@
   };
 
   environment.variables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
-    BROWSER = "brave";
     XCURSOR_SIZE = "60";
     XCURSOR_THEME = "Bibata_Ice";
   };
