@@ -1,6 +1,46 @@
 {
   "nodes": {
+    "dotfiles": {
+      "inputs": {
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1631477587,
+        "narHash": "sha256-iRwXNdddAqcr0tjCJj7YI2mbzGLt4r2G347irLlJUsM=",
+        "owner": "winston0410",
+        "repo": "universal-dotfiles",
+        "rev": "7fc8d1c643bd00827f32b6c0c580bbfde0ec6d1b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "winston0410",
+        "ref": "master",
+        "repo": "universal-dotfiles",
+        "type": "github"
+      }
+    },
     "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1631134124,
+        "narHash": "sha256-C17wJ2HyuFZllJ/PbpFuuDjkzWvg8np9UIAdSrpuwS0=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "039f786e609fdb3cfd9c5520ff3791750c3eaebf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "home-manager_2": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -22,6 +62,22 @@
     },
     "nixpkgs": {
       "locked": {
+        "lastModified": 1631015389,
+        "narHash": "sha256-9SKTwRbp7OQGa4wKTo1wB6ctC2VlaIeKFZ+flqzPuoI=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "bc06c93905f60a82d6ebbb78f78cf289257860cc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
         "lastModified": 1628605906,
         "narHash": "sha256-XqCCPDIIG4zMPJ/V757FgzGM2zypcRb1BY7u/DqHKX0=",
         "owner": "nixos",
@@ -38,8 +94,9 @@
     },
     "root": {
       "inputs": {
-        "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "dotfiles": "dotfiles",
+        "home-manager": "home-manager_2",
+        "nixpkgs": "nixpkgs_2"
       }
     }
   },

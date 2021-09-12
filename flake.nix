@@ -7,9 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs = { nixpkgs.follows = "nixpkgs"; };
     };
+    dotfiles = { url = "github:winston0410/universal-dotfiles/master"; };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, dotfiles, ... }:
     let
       system = "x86_64-linux";
 
@@ -17,32 +18,33 @@
         inherit system;
         config = { allowUnfree = true; };
       };
-
-      lib = nixpkgs.lib;
     in {
-      homeManagerConfigurations = {
-        hugosum =
-          home-manager.lib.homeManagerConfigurations { inherit system pkgs; };
-      };
       nixosConfigurations = {
-        nixos = lib.nixosSystem {
+        nixos = nixpkgs.lib.nixosSystem {
           inherit system;
 
           modules = [
             ./configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.hugosum = import ./home-manager.nix;
-            }
-            ./container.nix
             ./hardware-configuration.nix
-            ./services.nix
-            ./shell.nix
+            home-manager.nixosModules.home-manager
+            (dotfiles.lib.createUserProfile "hugosum" ([
+              dotfiles.modules.windowManager.leftwm
+              dotfiles.modules.multiplexer.tmux
+              dotfiles.modules.misc.bibata-cursor
+            ] ++ dotfiles.collections.devMachine))
             ./xserver.nix
           ];
         };
       };
     };
 }
+
+# {
+# home-manager.useGlobalPkgs = true;
+# home-manager.useUserPackages = true;
+# home-manager.users.hugosum = { ... }@args: {
+# imports = [
+# ./home-manager.nix
+# ];
+# };
+# }

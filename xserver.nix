@@ -70,10 +70,10 @@ in {
       };
     };
 
-    windowManager.leftwm = { enable = true; };
+    # windowManager.leftwm = { enable = true; };
 
     displayManager = {
-      defaultSession = "none+leftwm";
+      # defaultSession = "none+leftwm";
       lightdm = {
         enable = true;
         greeter = { enable = false; };
@@ -86,7 +86,6 @@ in {
       sessionCommands = ''
         ${initialLight}
         ${pkgs.xorg.xmodmap}/bin/xmodmap ${keybindings}
-        ${pkgs.fusuma}/bin/fusuma -d -c ${./fusuma/config.yaml}
         $HOME/.config/leftwm/themes/current/up
       '';
     };
