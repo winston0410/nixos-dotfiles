@@ -24,11 +24,11 @@
           inherit system;
 
           modules = [
-            ./configuration.nix
             ./hardware-configuration.nix
             home-manager.nixosModules.home-manager
             (dotfiles.lib.createUserProfile "hugosum" ([
               dotfiles.modules.windowManager.leftwm
+              dotfiles.modules.nixos.config.minimal
               dotfiles.modules.multiplexer.tmux
               dotfiles.modules.misc.bibata-cursor
             ] ++ dotfiles.collections.devMachine))
