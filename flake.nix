@@ -31,8 +31,8 @@
               dotfiles.modules.nixos.config.minimal
               dotfiles.modules.multiplexer.tmux
               dotfiles.modules.misc.bibata-cursor
+              dotfiles.modules.nixos.xserver
             ] ++ dotfiles.collections.devMachine))
-            ./xserver.nix
           ];
         };
       };
