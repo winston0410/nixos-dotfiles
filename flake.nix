@@ -7,10 +7,11 @@
       url = "github:nix-community/home-manager";
       inputs = { nixpkgs.follows = "nixpkgs"; };
     };
-    dotfiles = { url = "github:winston0410/universal-dotfiles/master"; };
+    dotfiles = { url = "github:winston0410/dotfiles-manager/master"; };
+    universal = { url = "github:winston0410/universal-dotfiles/master"; };
   };
 
-  outputs = { nixpkgs, home-manager, dotfiles, ... }:
+  outputs = { nixpkgs, home-manager, dotfiles, universal, ... }:
     let
       system = "x86_64-linux";
 
@@ -26,25 +27,10 @@
           modules = [
             ./hardware-configuration.nix
             home-manager.nixosModules.home-manager
-            (dotfiles.lib.createUserProfile "hugosum" ([
-              dotfiles.modules.windowManager.leftwm
-              dotfiles.modules.nixos.config.minimal
-              dotfiles.modules.multiplexer.tmux
-              dotfiles.modules.misc.bibata-cursor
-              dotfiles.modules.nixos.xserver
-            ] ++ dotfiles.collections.devMachine))
+            (dotfiles.lib.createUserProfile "hugosum"
+              universal.profiles.macbook2017)
           ];
         };
       };
     };
 }
-
-# {
-# home-manager.useGlobalPkgs = true;
-# home-manager.useUserPackages = true;
-# home-manager.users.hugosum = { ... }@args: {
-# imports = [
-# ./home-manager.nix
-# ];
-# };
-# }
