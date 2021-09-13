@@ -6,11 +6,33 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1631515041,
-        "narHash": "sha256-ZGZWpouWAyCfDg9rUNc0JakFWBLnxkB+QsRWBK6O3T0=",
+        "lastModified": 1631546754,
+        "narHash": "sha256-8fh6kEWjGJiIMAqIyOB//onRMNOr5sYYfzrr8vV6u0Y=",
         "owner": "winston0410",
         "repo": "dotfiles-manager",
-        "rev": "3c1215de7702b8a8b4fb953b57b59dce0fe943ec",
+        "rev": "faf4208215cf5b892dac81bac6b972c42f05fa8f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "winston0410",
+        "ref": "master",
+        "repo": "dotfiles-manager",
+        "type": "github"
+      }
+    },
+    "dotfiles-manager": {
+      "inputs": {
+        "home-manager": "home-manager_3",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1631546754,
+        "narHash": "sha256-8fh6kEWjGJiIMAqIyOB//onRMNOr5sYYfzrr8vV6u0Y=",
+        "owner": "winston0410",
+        "repo": "dotfiles-manager",
+        "rev": "faf4208215cf5b892dac81bac6b972c42f05fa8f",
         "type": "github"
       },
       "original": {
@@ -61,6 +83,26 @@
       }
     },
     "home-manager_3": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1631485157,
+        "narHash": "sha256-U2qv2tjrWpTWe1KPUPXEcByOdnTBlJWX/Bhk7Ax5mgA=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "208e310e9409d0d54ae5e19cb52f8d0f3c7f4771",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "home-manager_4": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -138,15 +180,16 @@
     },
     "universal": {
       "inputs": {
-        "home-manager": "home-manager_3",
+        "dotfiles-manager": "dotfiles-manager",
+        "home-manager": "home-manager_4",
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1631538164,
-        "narHash": "sha256-BeFRoDWeGQ+XvjEdPvSZ288C1JYzPHmcYL7ZHAA0Pe4=",
+        "lastModified": 1631547047,
+        "narHash": "sha256-JqVyDkF9Ef3CBPw3x+/mKb6yqGDD5iI5qv56x03O1X4=",
         "owner": "winston0410",
         "repo": "universal-dotfiles",
-        "rev": "fb24a6b6f4a6bc6e4a5ed821d7650e3412a7727f",
+        "rev": "2de54d9421cebf796380421b64969cc355cb52cb",
         "type": "github"
       },
       "original": {

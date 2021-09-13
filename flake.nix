@@ -27,8 +27,7 @@
           modules = [
             ./hardware-configuration.nix
             home-manager.nixosModules.home-manager
-            (dotfiles.lib.createUserProfile "hugosum"
-              universal.profiles.macbook2017)
+            (universal.profiles.macbook2017 "hugosum")
           ];
         };
       };
