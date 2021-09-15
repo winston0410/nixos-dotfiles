@@ -1,1 +1,0 @@
-echo "UnloadTheme" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
