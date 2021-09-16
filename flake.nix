@@ -7,21 +7,33 @@
       url = "github:nix-community/home-manager";
       inputs = { nixpkgs.follows = "nixpkgs"; };
     };
-    dotfiles = { url = "github:winston0410/dotfiles-manager/master"; };
-    universal = { url = "github:winston0410/universal-dotfiles/master"; };
-  };
-
-  outputs = { nixpkgs, home-manager, dotfiles, universal, ... }:
-    {
-      nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            ./hardware-configuration.nix
-            home-manager.nixosModules.home-manager
-            (universal.profiles.nixos.macbook2017 "hugosum")
-          ];
-        };
+    dotfiles = {
+      url = "github:winston0410/dotfiles-manager/master";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
       };
     };
+    universal = {
+      url = "github:winston0410/universal-dotfiles/master";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
+  };
+
+  outputs = { nixpkgs, home-manager, dotfiles, universal, ... }: {
+    nixosConfigurations = {
+      nixos = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hardware-configuration.nix
+          home-manager.nixosModules.home-manager
+          (universal.profiles.nixos.macbook2017 "hugosum")
+        ];
+      };
+    };
+    # devShell = import ./shell.nix { pkgs = nixpkgs; };
+  };
 }

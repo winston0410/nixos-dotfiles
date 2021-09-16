@@ -4,10 +4,19 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/hardware/network/broadcom-43xx.nix")
-      (modulesPath + "/installer/scan/not-detected.nix")
+  imports = [
+    (modulesPath + "/hardware/network/broadcom-43xx.nix")
+    (modulesPath + "/installer/scan/not-detected.nix")
+  ];
+
+  # TODO: move this cron job later
+  services.cron = {
+    enable = true;
+    mailto = "hugosum.dev@protonmail.com";
+    systemCronJobs = [
+      "0 12 * * * hugosum . /etc/profile/; cd $HOME/flake; /run/current-system/sw/bin/nix flake update > /tmp/cronout 2>&1"
     ];
+  };
 
   boot = {
     loader = {
@@ -19,22 +28,22 @@
     extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   };
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules =
+    [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/1c0de2e0-f5c0-4c55-b08f-db9cfe7579f6";
-      fsType = "ext4";
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/1c0de2e0-f5c0-4c55-b08f-db9cfe7579f6";
+    fsType = "ext4";
+  };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/8AD1-B8D0";
-      fsType = "vfat";
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/8AD1-B8D0";
+    fsType = "vfat";
+  };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/d933efb8-5426-4f68-8076-8cf9ca74644c"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/d933efb8-5426-4f68-8076-8cf9ca74644c"; }];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   # high-resolution display
