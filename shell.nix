@@ -4,6 +4,6 @@ pkgs.mkShell {
   buildInputs = [ ];
 
   shellHook = ''
-    export FOO=BAR
+    echo hello
   '';
 }

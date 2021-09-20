@@ -1,6 +1,6 @@
 {
   "nodes": {
-    "dotfiles": {
+    "dotfiles-manager": {
       "inputs": {
         "home-manager": [
           "home-manager"
@@ -10,11 +10,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1631828802,
-        "narHash": "sha256-A2ZrUqZObd64T/dD4hdzKnVZ9Q048sdtMFJsc5r9H9k=",
+        "lastModified": 1632052245,
+        "narHash": "sha256-ZOSZ0cPXNtX3trMEm2P0xi25rLR+wVcqCRlXdggufDA=",
         "owner": "winston0410",
         "repo": "dotfiles-manager",
-        "rev": "e6b2a183250af6b4f0e18a2cc258f5a72e0cbd68",
+        "rev": "9eaefe6c12d1eab1b9a85995f57b46ce543d7b3d",
         "type": "github"
       },
       "original": {
@@ -24,29 +24,81 @@
         "type": "github"
       }
     },
-    "dotfiles-manager": {
+    "eww": {
       "inputs": {
-        "home-manager": [
-          "universal",
-          "home-manager"
-        ],
+        "fenix": "fenix",
+        "flake-compat": "flake-compat",
+        "flake-utils": "flake-utils",
+        "naersk": "naersk",
         "nixpkgs": [
-          "universal",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1631828802,
-        "narHash": "sha256-A2ZrUqZObd64T/dD4hdzKnVZ9Q048sdtMFJsc5r9H9k=",
-        "owner": "winston0410",
-        "repo": "dotfiles-manager",
-        "rev": "e6b2a183250af6b4f0e18a2cc258f5a72e0cbd68",
+        "lastModified": 1631542802,
+        "narHash": "sha256-HAw9Olm+WI0AB2AomVdQkuSaOMNz79nYRs5DpsRxgFA=",
+        "owner": "elkowar",
+        "repo": "eww",
+        "rev": "07eeac340fbb6453b6aa73d2cad91902bab61cf8",
         "type": "github"
       },
       "original": {
-        "owner": "winston0410",
+        "owner": "elkowar",
         "ref": "master",
-        "repo": "dotfiles-manager",
+        "repo": "eww",
+        "type": "github"
+      }
+    },
+    "fenix": {
+      "inputs": {
+        "nixpkgs": [
+          "eww",
+          "nixpkgs"
+        ],
+        "rust-analyzer-src": "rust-analyzer-src"
+      },
+      "locked": {
+        "lastModified": 1630895391,
+        "narHash": "sha256-yokHZl7RvKfvmAmouI0Zr5x4SKhYvukRcU8XzRk7yf0=",
+        "owner": "nix-community",
+        "repo": "fenix",
+        "rev": "3893e32c15e2ba4999510de67023a31d6f0e8b6e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "fenix",
+        "type": "github"
+      }
+    },
+    "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1627913399,
+        "narHash": "sha256-hY8g6H2KFL8ownSiFeMOjwPC8P0ueXpCVEbxgda3pko=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "12c64ca55c1014cdc1b16ed5a804aa8576601ff2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1629481132,
+        "narHash": "sha256-JHgasjPR0/J1J3DRm4KxM4zTyAj4IOJY8vIl75v/kPI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "997f7efcb746a9c140ce1f13c72263189225f482",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
         "type": "github"
       }
     },
@@ -70,13 +122,44 @@
         "type": "github"
       }
     },
+    "naersk": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1629707199,
+        "narHash": "sha256-sGxlmfp5eXL5sAMNqHSb04Zq6gPl+JeltIZ226OYN0w=",
+        "owner": "nmattia",
+        "repo": "naersk",
+        "rev": "df71f5e4babda41cd919a8684b72218e2e809fa9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nmattia",
+        "repo": "naersk",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1631696613,
-        "narHash": "sha256-6DomCcyMMRG+ShtDstRgCjC1m5J0JzjEMnUaiLnl9TY=",
+        "lastModified": 1630761588,
+        "narHash": "sha256-7GXckvZy7DGh2KIyfdArqwnyeSc5Owy1fumEDQyd8eY=",
+        "path": "/nix/store/8i2kd1ndvx8adgid7vf4szhxsh1f9pkm-source",
+        "rev": "a51aa6523bd8ee985bc70987909eff235900197a",
+        "type": "path"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1631962327,
+        "narHash": "sha256-h2fgtNHozEcB42BQ1QVWAJUpQ1FA3gpgq/RrOKAxbfE=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "47eaf6727bd362dac94eab91b7fdc876642d578b",
+        "rev": "bc9b956714ed6eac5f8888322aac5bc41389defa",
         "type": "github"
       },
       "original": {
@@ -88,15 +171,35 @@
     },
     "root": {
       "inputs": {
-        "dotfiles": "dotfiles",
+        "dotfiles-manager": "dotfiles-manager",
+        "eww": "eww",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
         "universal": "universal"
+      }
+    },
+    "rust-analyzer-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1630870637,
+        "narHash": "sha256-TacpTVvHAIs4kZ5vibj8luy/kryYwxY+OXFNPnqiXP0=",
+        "owner": "rust-analyzer",
+        "repo": "rust-analyzer",
+        "rev": "b73b321478d3b2a98d380eb79de717e01620c4e9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rust-analyzer",
+        "ref": "nightly",
+        "repo": "rust-analyzer",
+        "type": "github"
       }
     },
     "universal": {
       "inputs": {
-        "dotfiles-manager": "dotfiles-manager",
+        "dotfiles-manager": [
+          "dotfiles-manager"
+        ],
         "home-manager": [
           "home-manager"
         ],
@@ -105,11 +208,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1631828812,
-        "narHash": "sha256-dRJR3vhQ9ruthABWCsGydMa3OM5Zvxj7ESimKsdEipQ=",
+        "lastModified": 1632140759,
+        "narHash": "sha256-epvrcBMS/PE3MKm4oKmUjWvC8aCMXhMsLjZhjYz4c2o=",
         "owner": "winston0410",
         "repo": "universal-dotfiles",
-        "rev": "a8cac40293145e281e076e8d6ac2575840c7915c",
+        "rev": "271a3e59005384310402ca5e29de8ff44648fbab",
         "type": "github"
       },
       "original": {
