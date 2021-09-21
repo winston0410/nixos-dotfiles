@@ -3,18 +3,20 @@
     "dotfiles-manager": {
       "inputs": {
         "home-manager": [
+          "universal",
           "home-manager"
         ],
         "nixpkgs": [
+          "universal",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1632052245,
-        "narHash": "sha256-ZOSZ0cPXNtX3trMEm2P0xi25rLR+wVcqCRlXdggufDA=",
+        "lastModified": 1632223955,
+        "narHash": "sha256-zbcNe6WnROcM12H77AFksqbQyfjOjGDw19XxORrHQqc=",
         "owner": "winston0410",
         "repo": "dotfiles-manager",
-        "rev": "9eaefe6c12d1eab1b9a85995f57b46ce543d7b3d",
+        "rev": "ebc775182838ebde7974884215f0d8648e682cdb",
         "type": "github"
       },
       "original": {
@@ -31,6 +33,7 @@
         "flake-utils": "flake-utils",
         "naersk": "naersk",
         "nixpkgs": [
+          "universal",
           "nixpkgs"
         ]
       },
@@ -52,6 +55,7 @@
     "fenix": {
       "inputs": {
         "nixpkgs": [
+          "universal",
           "eww",
           "nixpkgs"
         ],
@@ -105,6 +109,7 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
+          "universal",
           "nixpkgs"
         ]
       },
@@ -124,7 +129,7 @@
     },
     "naersk": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs_2"
       },
       "locked": {
         "lastModified": 1629707199,
@@ -142,19 +147,6 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1630761588,
-        "narHash": "sha256-7GXckvZy7DGh2KIyfdArqwnyeSc5Owy1fumEDQyd8eY=",
-        "path": "/nix/store/8i2kd1ndvx8adgid7vf4szhxsh1f9pkm-source",
-        "rev": "a51aa6523bd8ee985bc70987909eff235900197a",
-        "type": "path"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
         "lastModified": 1631962327,
         "narHash": "sha256-h2fgtNHozEcB42BQ1QVWAJUpQ1FA3gpgq/RrOKAxbfE=",
         "owner": "nixos",
@@ -169,12 +161,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1630761588,
+        "narHash": "sha256-7GXckvZy7DGh2KIyfdArqwnyeSc5Owy1fumEDQyd8eY=",
+        "path": "/nix/store/8i2kd1ndvx8adgid7vf4szhxsh1f9pkm-source",
+        "rev": "a51aa6523bd8ee985bc70987909eff235900197a",
+        "type": "path"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
     "root": {
       "inputs": {
-        "dotfiles-manager": "dotfiles-manager",
-        "eww": "eww",
-        "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs",
         "universal": "universal"
       }
     },
@@ -197,22 +199,19 @@
     },
     "universal": {
       "inputs": {
-        "dotfiles-manager": [
-          "dotfiles-manager"
-        ],
-        "home-manager": [
-          "home-manager"
-        ],
+        "dotfiles-manager": "dotfiles-manager",
+        "eww": "eww",
+        "home-manager": "home-manager",
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1632140759,
-        "narHash": "sha256-epvrcBMS/PE3MKm4oKmUjWvC8aCMXhMsLjZhjYz4c2o=",
+        "lastModified": 1632224488,
+        "narHash": "sha256-iMNqhgNaMh22/Roof27fUCxCliYIXwDnfA/lPXztVY0=",
         "owner": "winston0410",
         "repo": "universal-dotfiles",
-        "rev": "271a3e59005384310402ca5e29de8ff44648fbab",
+        "rev": "04ba2f1a9c5622fb29963f66309f7f0219025e5f",
         "type": "github"
       },
       "original": {
