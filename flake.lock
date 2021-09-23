@@ -12,18 +12,13 @@
         ]
       },
       "locked": {
-        "lastModified": 1632223955,
-        "narHash": "sha256-zbcNe6WnROcM12H77AFksqbQyfjOjGDw19XxORrHQqc=",
-        "owner": "winston0410",
-        "repo": "dotfiles-manager",
-        "rev": "ebc775182838ebde7974884215f0d8648e682cdb",
-        "type": "github"
+        "narHash": "sha256-WnD/zQf1YUA4xy3sjAA7sznFPW3V8GhAX8QKNyikPMg=",
+        "path": "/home/hugosum/dotfiles-manager",
+        "type": "path"
       },
       "original": {
-        "owner": "winston0410",
-        "ref": "master",
-        "repo": "dotfiles-manager",
-        "type": "github"
+        "path": "/home/hugosum/dotfiles-manager",
+        "type": "path"
       }
     },
     "eww": {
@@ -114,11 +109,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1631740142,
-        "narHash": "sha256-FnwtaJ+fZw2QzsCqGJW4kJd9hXiPxPgfi+9dwratk28=",
+        "lastModified": 1632256651,
+        "narHash": "sha256-+jbZKohfqTjp/5SwudwIhYzmFqmGDlIG99V5lOE4Yjg=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "371576cdc2580ba93a38e28da8ece2129f558815",
+        "rev": "58aa667e28ca4a6a2159b1f3258ef5d494d5ecb6",
         "type": "github"
       },
       "original": {
@@ -207,18 +202,13 @@
         ]
       },
       "locked": {
-        "lastModified": 1632224488,
-        "narHash": "sha256-iMNqhgNaMh22/Roof27fUCxCliYIXwDnfA/lPXztVY0=",
-        "owner": "winston0410",
-        "repo": "universal-dotfiles",
-        "rev": "04ba2f1a9c5622fb29963f66309f7f0219025e5f",
-        "type": "github"
+        "narHash": "sha256-h07Nw1QZ/dVmDPCtE+fXtPH1PGM3YSUq66H986y2NAw=",
+        "path": "/home/hugosum/universal-dotfiles",
+        "type": "path"
       },
       "original": {
-        "owner": "winston0410",
-        "ref": "master",
-        "repo": "universal-dotfiles",
-        "type": "github"
+        "path": "/home/hugosum/universal-dotfiles",
+        "type": "path"
       }
     }
   },
