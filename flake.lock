@@ -12,7 +12,7 @@
         ]
       },
       "locked": {
-        "narHash": "sha256-WnD/zQf1YUA4xy3sjAA7sznFPW3V8GhAX8QKNyikPMg=",
+        "narHash": "sha256-/N7XsAsJNUsRd8rTAHhd/COc/cfe+bjyPTdl1XLh6U8=",
         "path": "/home/hugosum/dotfiles-manager",
         "type": "path"
       },
@@ -142,11 +142,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1631962327,
-        "narHash": "sha256-h2fgtNHozEcB42BQ1QVWAJUpQ1FA3gpgq/RrOKAxbfE=",
+        "lastModified": 1632325095,
+        "narHash": "sha256-KHVVIxhVHq4Wwj4oQPem8/eVkukVKhSPqFKI1o5NrTw=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "bc9b956714ed6eac5f8888322aac5bc41389defa",
+        "rev": "a930f7da84786807bb105df40e76b541604c3e72",
         "type": "github"
       },
       "original": {
@@ -202,7 +202,7 @@
         ]
       },
       "locked": {
-        "narHash": "sha256-h07Nw1QZ/dVmDPCtE+fXtPH1PGM3YSUq66H986y2NAw=",
+        "narHash": "sha256-jWoulHPYTqnvwbWtz1tAK01U87wbI/FcB33ppWxE7SM=",
         "path": "/home/hugosum/universal-dotfiles",
         "type": "path"
       },
