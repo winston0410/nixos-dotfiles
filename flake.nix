@@ -3,25 +3,27 @@
 
   inputs = {
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
+
     universal = {
-      url = "github:winston0410/universal-dotfiles/master";
+      url = "path:/home/hugosum/universal-dotfiles";
       inputs = { nixpkgs.follows = "nixpkgs"; };
     };
   };
 
-  outputs = inputs:
+  outputs = { nixpkgs, universal, ... }:
     let system = "x86_64-linux";
     in {
       nixosConfigurations = {
-        nixos = (inputs.universal.profiles.nixos {
-          extraModules = ([
-            ./hardware-configuration.nix
-            (inputs.universal.profiles.user.dev { } "hugosum")
-          ]);
+        nixos = ((universal.profiles.system.nixos).override {
+          modules = {
+            hardware = ./hardware-configuration.nix;
+            profile = ((universal.profiles.home.dev).override {
+              userProfile = (universal.profiles.user.hugosum);
+            });
+          };
         });
       };
-      devShell.${system} = (import ./shell.nix) {
-        pkgs = inputs.nixpkgs.legacyPackages.${system};
-      };
+      devShell.${system} =
+        (import ./shell.nix) { pkgs = nixpkgs.legacyPackages.${system}; };
     };
 }
