@@ -31,6 +31,7 @@
                   HostName ${secret.ip.netcup}
                   User root
                   
+                #NOTE default image of oracle instance doesn't accept root. Use root after infection
                 Host oracle1
                   HostName ${secret.ip.oracle1}
                   User root
@@ -43,13 +44,13 @@
               userProfile = (universal.profiles.user.hugosum);
             });
 
-            k8s = ({ pkgs, ... }: {
-              networking.firewall.allowedTCPPorts = [ 6443 ];
+            # k8s = ({ pkgs, ... }: {
+              # networking.firewall.allowedTCPPorts = [ 6443 ];
 
-              services.k3s = { enable = true; };
+              # services.k3s = { enable = true; };
 
-              environment.systemPackages = [ pkgs.k3s ];
-            });
+              # environment.systemPackages = [ pkgs.k3s ];
+            # });
 
             accent = ({ pkgs, lib, config, ... }:
               let
