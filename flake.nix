@@ -35,6 +35,10 @@
                 Host oracle1
                   HostName ${secret.ip.oracle1}
                   User root
+                  
+                Host oracle2
+                  HostName ${secret.ip.oracle2}
+                  User root
               '';
 
               virtualisation.oci-containers.backend = "docker";
