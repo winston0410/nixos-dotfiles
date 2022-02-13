@@ -211,7 +211,7 @@
         ]
       },
       "locked": {
-        "narHash": "sha256-h715N0x8/Ak9T2Njznt05/xdPkKzw4W9wPvF1bNoR0o=",
+        "narHash": "sha256-LFKNq2izHOEtCJEc1zgRvtSI/GCq9lvkBnyPkx9rj6E=",
         "path": "/home/hugosum/ory-kratos-flake",
         "type": "path"
       },
@@ -260,11 +260,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1637255006,
-        "narHash": "sha256-nfg8bJ5KNrICSlqSgpAUy6IUW5PcIwfbvoweIr/tiRk=",
+        "lastModified": 1644486793,
+        "narHash": "sha256-EeijR4guVHgVv+JpOX3cQO+1XdrkJfGmiJ9XVsVU530=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e5537e4de773cc63a7246acb93751c105cb07c25",
+        "rev": "1882c6b7368fd284ad01b0a5b5601ef136321292",
         "type": "github"
       },
       "original": {
@@ -363,7 +363,7 @@
     },
     "secret": {
       "locked": {
-        "narHash": "sha256-fIiO60oUvxFdtFI6M2Qs8qjIJnjJCtOkHgyFucAcT0c=",
+        "narHash": "sha256-zEE/x522ALDfMvpNJY8NXwt/IAbM8ITf70275gFDbxo=",
         "path": "/home/hugosum/secret",
         "type": "path"
       },
@@ -384,7 +384,7 @@
         "xdg": "xdg"
       },
       "locked": {
-        "narHash": "sha256-OLhCx5jRZTqlil6xNCqfRBjcnPeN69EG4Jx3fq9HtuY=",
+        "narHash": "sha256-QnxuzUGCraTxOhymlFbyxV/qn2lVjs2C4siYJkS7Tw4=",
         "path": "/home/hugosum/universal-dotfiles",
         "type": "path"
       },
