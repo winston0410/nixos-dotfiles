@@ -384,7 +384,7 @@
         "xdg": "xdg"
       },
       "locked": {
-        "narHash": "sha256-QnxuzUGCraTxOhymlFbyxV/qn2lVjs2C4siYJkS7Tw4=",
+        "narHash": "sha256-wd8l5BeIER1UCrYb8/yAZ0/qdYPPL76ARPYXJ0tqR+A=",
         "path": "/home/hugosum/universal-dotfiles",
         "type": "path"
       },
