@@ -115,9 +115,11 @@ programs.nano.enable = false;
   environment.systemPackages = with pkgs; [
    vim
    git-credential-manager
+  # to allow all console applications to use system Xserver clipboard
+  xclip
   ];
-  networking.firewall.enable = true;
-  networking.firewall.allowPing = false;
+  # networking.firewall.enable = false;
+  # networking.firewall.allowPing = false;
   nix.gc = {
   automatic = true;
   dates = "*-*-* 21:00:00";
