@@ -5,10 +5,9 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -36,18 +35,16 @@
     LC_TELEPHONE = "en_GB.UTF-8";
     LC_TIME = "en_GB.UTF-8";
   };
-  hardware.graphics = {
-    enable = true;
-  };
-  services.xserver.videoDrivers = ["nvidia"];
+  hardware.graphics = { enable = true; };
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
-package = config.boot.kernelPackages.nvidiaPackages.production;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
     modesetting.enable = true;
-powerManagement.finegrained = false;
+    powerManagement.finegrained = false;
     open = true;
   };
   hardware.bluetooth.enable = true;
-hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth.powerOnBoot = true;
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -57,13 +54,11 @@ hardware.bluetooth.powerOnBoot = true;
   services.xserver.excludePackages = with pkgs; [ xterm ];
   programs.dconf.enable = true;
   programs.ssh.enableAskPassword = false;
-services.gnome.games.enable = false;
-services.gnome.core-utilities.enable = false;
-services.gnome.gnome-browser-connector.enable = true;
-environment.gnome.excludePackages = (with pkgs; [
-  gnome-tour
-]);
-programs.gnome-terminal.enable = true;
+  services.gnome.games.enable = false;
+  services.gnome.core-utilities.enable = false;
+  services.gnome.gnome-browser-connector.enable = true;
+  environment.gnome.excludePackages = (with pkgs; [ gnome-tour ]);
+  programs.gnome-terminal.enable = true;
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -71,15 +66,15 @@ programs.gnome-terminal.enable = true;
   };
 
   services.printing.enable = true;
-services.avahi = {
-  enable = true;
-  nssmdns4 = true;
-  openFirewall = true;
-  publish = {
+  services.avahi = {
     enable = true;
-    userServices = true;
+    nssmdns4 = true;
+    openFirewall = true;
+    publish = {
+      enable = true;
+      userServices = true;
+    };
   };
-};
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -89,8 +84,8 @@ services.avahi = {
     pulse.enable = true;
     jack.enable = true;
   };
-services.hardware.openrgb.enable = true;
-services.hardware.openrgb.motherboard = "amd";
+  services.hardware.openrgb.enable = true;
+  services.hardware.openrgb.motherboard = "amd";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kghugo = {
@@ -109,36 +104,32 @@ services.hardware.openrgb.motherboard = "amd";
   systemd.services."autovt@tty1".enable = false;
 
   nixpkgs.config.allowUnfree = true;
-programs.nano.enable = false;
+  programs.nano.enable = false;
   environment.systemPackages = with pkgs; [
-   vim
-   git-credential-manager
-   # to allow all console applications to use system Xserver clipboard
-   xclip
+    vim
+    git-credential-oauth
+    # to allow all console applications to use system Xserver clipboard
+    xclip
   ];
   nix.gc = {
-  automatic = true;
-  dates = "*-*-* 21:00:00";
-  options = "--delete-older-than 7d";
-};
-programs.git = {
-  enable = true;
-  config = {
-    core = {
-      editor = "vim";
-    };
-    user = {
-      name = "winston0410";
-      email = "hugosum.dev@protonmail.com";
-    };
-    credential = {
-      helper = "manager";
-      credentialStore = "secretservice";
+    automatic = true;
+    dates = "*-*-* 21:00:00";
+    options = "--delete-older-than 7d";
+  };
+  programs.git = {
+    enable = true;
+    config = {
+      core = { editor = "vim"; };
+      user = {
+        name = "winston0410";
+        email = "hugosum.dev@protonmail.com";
+      };
+      credential = { helper = [ "cache --timeout 43200" "oauth" ]; };
     };
   };
-};
-security.sudo.enable = false;
-nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  security.sudo.enable = false;
+  documentation.nixos.enable = false;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -146,6 +137,5 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-
 
 }
