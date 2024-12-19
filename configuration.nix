@@ -55,9 +55,11 @@ hardware.bluetooth.powerOnBoot = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.excludePackages = with pkgs; [ xterm ];
+  programs.dconf.enable = true;
   programs.ssh.enableAskPassword = false;
 services.gnome.games.enable = false;
 services.gnome.core-utilities.enable = false;
+services.gnome.gnome-browser-connector.enable = true;
 environment.gnome.excludePackages = (with pkgs; [
   gnome-tour
 ]);
@@ -106,20 +108,14 @@ services.hardware.openrgb.motherboard = "amd";
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 programs.nano.enable = false;
   environment.systemPackages = with pkgs; [
    vim
    git-credential-manager
-  # to allow all console applications to use system Xserver clipboard
-  xclip
+   # to allow all console applications to use system Xserver clipboard
+   xclip
   ];
-  # networking.firewall.enable = false;
-  # networking.firewall.allowPing = false;
   nix.gc = {
   automatic = true;
   dates = "*-*-* 21:00:00";
