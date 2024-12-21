@@ -18,10 +18,8 @@
   networking.networkmanager.enable = true;
   boot.kernelPackages = pkgs.linuxPackages_6_12;
 
-  # Set your time zone.
   time.timeZone = "Europe/London";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -54,10 +52,11 @@
   services.xserver.excludePackages = with pkgs; [ xterm ];
   programs.dconf.enable = true;
   programs.ssh.enableAskPassword = false;
+services.gnome.gnome-keyring.enable = true;
   services.gnome.games.enable = false;
   services.gnome.core-utilities.enable = false;
   services.gnome.gnome-browser-connector.enable = true;
-  environment.gnome.excludePackages = (with pkgs; [ gnome-tour ]);
+  environment.gnome.excludePackages = (with pkgs; [ gnome-tour gnome-shell-extensions]);
   programs.gnome-terminal.enable = true;
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -77,6 +76,8 @@
   };
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  security.sudo.enable = false;
+  security.pam.services.gdm-password.enableGnomeKeyring = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -84,6 +85,7 @@
     pulse.enable = true;
     jack.enable = true;
   };
+  # NOTE after applying the config, you need to create an OpenRGB profile so the setting can be persisted. The OpenRGB profile file is binary, therefore not suitable to be generated with home-manager at the moment
   services.hardware.openrgb.enable = true;
   services.hardware.openrgb.motherboard = "amd";
 
@@ -95,20 +97,21 @@
     packages = with pkgs; [ ];
   };
 
+  services.xserver.displayManager.autoLogin.enable = false;
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "kghugo";
+  # services.xserver.displayManager.autoLogin.enable = true;
+  # services.xserver.displayManager.autoLogin.user = "kghugo";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
+  # systemd.services."getty@tty1".enable = false;
+  # systemd.services."autovt@tty1".enable = false;
 
   nixpkgs.config.allowUnfree = true;
   programs.nano.enable = false;
   environment.systemPackages = with pkgs; [
     vim
     git-credential-oauth
-    # to allow all console applications to use system Xserver clipboard
+    # NOTE to allow all console applications to use system Xserver clipboard
     xclip
   ];
   nix.gc = {
@@ -116,20 +119,48 @@
     dates = "*-*-* 21:00:00";
     options = "--delete-older-than 7d";
   };
+  nix.optimise = {
+    automatic = true;
+    dates = [ "*-*-* 21:00:00" ];
+  };
   programs.git = {
     enable = true;
     config = {
       core = { editor = "vim"; };
       user = {
-        name = "winston0410";
-        email = "hugosum.dev@protonmail.com";
+        name = "unknown";
+        email = "johndoe@example.com";
       };
       credential = { helper = [ "cache --timeout 43200" "oauth" ]; };
     };
   };
-  security.sudo.enable = false;
+# NOTE cannot move this to home-manager layer. Revisit this later
+programs.kdeconnect = {
+  enable = true;
+  package = pkgs.gnomeExtensions.gsconnect;
+};
+ i18n.inputMethod = {
+  enable = true;
+  type = "ibus";
+  ibus.engines = with pkgs; [ ibus-engines.rime ibus-engines.hangul ];
+ };
+
+  virtualisation = {
+    containers = {
+      enable = true;
+    };
+    podman = {
+      enable = true;
+
+      dockerCompat = true;
+
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
+
   documentation.nixos.enable = false;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.auto-optimise-store = true;
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
