@@ -17,6 +17,7 @@
   networking.wireless.enable = false;
   networking.networkmanager.enable = true;
   boot.kernelPackages = pkgs.linuxPackages_6_12;
+  boot.tmp.cleanOnBoot = true;
 
   time.timeZone = "Europe/London";
 
